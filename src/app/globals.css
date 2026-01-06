@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input:focus,
+textarea:focus,
+select:focus input:focus-within input:focus-within,
+textarea:focus-within,
+select:focus-within {
+  background: transparent !important
+}
+
+@layer base {
+  :root {
+    --background: #0f1e3e;
+    --foreground: #ffffff;
+    /* Type */
+    --type-primary: #323130;
+    --type-secondary: #605e5c;
+    --type-disabled: #a19f9d;
+
+    /* Borders and Divider */
+    --divider: #edebe9;
+    --input-border: #8a8886;
+    --input-border-hover: #323130;
+
+    --disabled: #888d91;
+
+    /* Overlays */
+    --overlay-light: #ffffff40;
+    --overlay-dark: #00000040;
+
+    --white: #ffffff;
+    --black: #000000;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --muted: 0 0% 96.1%;
+    --accent-foreground: #8cbe41;
+    --accent: #a8ef4340;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground;
+  }
+}
+
+.CircularProgressbar-path {
+  stroke: url(#gradientStroke) !important;
+}
+
+/* Custom slider styles */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #01796F;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  width: 14px;
+  height: 14px;
+  background: #02776d;
+}
+
+.slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #01796F;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.slider::-moz-range-thumb:hover {
+  width: 14px;
+  height: 14px;
+  background: #02776d;
+}
+
+/* Splide Custom Styles */
+.splide__arrow {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  opacity: 1 !important;
+  transition: all 0.3s ease;
+}
+
+.splide__arrow:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.splide__arrow svg {
+  fill: #ffffff !important;
+  width: 20px;
+  height: 20px;
+}
+
+.splide__arrow--prev {
+  left: -50px;
+}
+
+.splide__arrow--next {
+  right: -50px;
+}
+
+@media (max-width: 1024px) {
+  .splide__arrow--prev {
+    left: -20px;
+  }
+
+  .splide__arrow--next {
+    right: -20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .splide__arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .splide__arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .splide__arrow--prev {
+    left: 10px;
+    z-index: 10;
+  }
+
+  .splide__arrow--next {
+    right: 10px;
+    z-index: 10;
+  }
+}
+
+/* Custom scrollbar styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(140, 190, 65, 0.6);
+  border-radius: 10px;
+  border: 2px solid rgba(30, 41, 59, 0.5);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 190, 65, 0.8);
+}
+
+/* Firefox scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(140, 190, 65, 0.6) rgba(30, 41, 59, 0.5);
+}
