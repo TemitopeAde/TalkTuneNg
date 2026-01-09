@@ -21,8 +21,11 @@ const nextConfig: NextConfig = {
     ],
   },
   experimental: {
-    forceSwcTransforms: true,
-  }
+    serverActions: {
+      bodySizeLimit: '2mb',
+      allowedOrigins: ['*'],
+    },
+  },
 };
 
 export default nextConfig;
